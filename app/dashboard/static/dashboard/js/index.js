@@ -37,14 +37,13 @@ $(function () {
 				}
 			})
 		},
-	})
-	// create .system-stat elements from /system-stats/order/
+	}).sortable("disable")
 	$.ajax({
 		url: '/api/system-stats/order/',
 		type: 'GET',
 		beforeSend: function (xhr) {
 			xhr.setRequestHeader('X-CSRFToken', Cookies.get('csrftoken'))
-  		},
+		},
 		success: function (data) {
 			console.log(data)
 			data.forEach(function (e) {
@@ -65,5 +64,21 @@ $(function () {
 				})
 			})
 		}
+	})
+
+	const editSysStatsCardBtn = $(".card.system-stats-card button[data-card-widget='edit']")
+	editSysStatsCardBtn.click(function () {
+		systemStats.edit = !systemStats.edit
+		if (systemStats.edit) {
+			editSysStatsCardBtn.find('i').removeClass('fa-pen-to-square').addClass('fa-save')
+			$(".card.system-stats-card").addClass('card-primary')
+		} else {
+			$(".card.system-stats-card").addClass('card-success')
+			setTimeout(function () {
+				editSysStatsCardBtn.find('i').addClass('fa-pen-to-square').removeClass('fa-save')
+				$(".card.system-stats-card").removeClass('card-success card-primary')
+			}, 1000)
+		}
+		$(".system-stats").sortable(systemStats.edit ? "enable" : "disable")
 	})
 })
