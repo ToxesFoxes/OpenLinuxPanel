@@ -1,0 +1,159 @@
+{% extends "adminlte/skeleton.html" %}
+{% load static %}
+{% load custom_tags %}
+{% block body_attributes %}
+class="layout-fixed sidebar-mini-md"
+{% endblock body_attributes %}
+{% block main %}
+<div class="wrapper">
+  <!-- Preloader -->
+  <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__wobble" src="{% static 'dashboard/images/logo.png' %}" alt="AdminLTELogo" height="60" width="60">
+  </div>
+  
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="index3.html" class="nav-link active">Home{% vardump data %}</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Contact</a>
+      </li>
+    </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="user-panel my-3 pb-3 d-flex flex-row">
+        <a href="#">
+          <div class="image">
+            <img src="{% static 'dashboard/images/logo.png' %}" alt="OLP Logo" class="img-circle">
+          </div>
+          <div class="info">
+            <span class="d-block">192.168.1.1</a>
+          </div>
+        </a>
+      </div>
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column nav-legacy nav-collapse-hide-child nav-child-indent text-sm" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item">
+            <a href="#" class="nav-link d-flex align-items-center active">
+              <i class="nav-icon fas fa-duotone fa-server"></i>
+              <p>
+                Home
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link d-flex align-items-center">
+              <i class="nav-icon fas fa-duotone fa-globe"></i>
+              <p>
+                Websites
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link d-flex align-items-center">
+              <i class="nav-icon fas fa-duotone fa-database"></i>
+              <p>
+                Databases
+              </p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Dashboard</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Dashboard v1</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <!-- jQuery Knob -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="far fa-chart-bar"></i>
+                  Server stats
+                </h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <div class="row system-stats">
+                  <div class="system-stat cpu col-6 col-sm-3 col-md-3 col-lg-2 text-center">
+                    <input type="text" class="knob" readonly data-linecap="round" data-thickness=".15" data-min="0"data-max="100" value="0" data-width="90" data-height="90" data-angleOffset="180" data-fgColor="#29D67A">
+                    <div class="knob-label">CPU</div>
+                  </div>
+                  <div class="system-stat memory col-6 col-sm-3 col-md-3 col-lg-2 text-center">
+                    <input type="text" class="knob" readonly data-linecap="round" data-thickness=".15" data-min="0"data-max="100" value="0" data-width="90" data-height="90" data-angleOffset="180" data-fgColor="#29D67A">
+                    <div class="knob-label">RAM</div>
+                  </div>
+                  <div class="system-stat disk col-6 col-sm-3 col-md-3 col-lg-2 text-center">
+                    <input type="text" class="knob" readonly data-linecap="round" data-thickness=".15" data-min="0"data-max="100" value="0" data-width="90" data-height="90" data-angleOffset="180" data-fgColor="#29D67A">
+                    <div class="knob-label">/</div>
+                  </div>
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 3.2.0
+    </div>
+  </footer>
+</div>
+{% endblock main %}
+{% block javascript %}
+    {{ block.super }}
+    <script src="{% static 'dashboard/js/index.js' %}"></script>
+{% endblock %}

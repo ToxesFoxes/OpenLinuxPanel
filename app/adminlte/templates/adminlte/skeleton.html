@@ -1,0 +1,67 @@
+{% load static %}
+{% block document %}
+<!DOCTYPE html>
+<html{% block html_attributes %} lang="en"{% endblock html_attributes %}>
+<head>
+{% block head %}
+  {% block meta %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="{% block meta_description %}{% endblock meta_description %}">
+    <meta name="keywords" content="{% block meta_keywords %}{% endblock meta_keywords %}">
+  {% endblock meta %}
+  <title>{% block title %}{% block page_title %}{% endblock page_title %} | {% block site_title %}{{ config.ADMINLTE_SITE_TITLE }}{% endblock site_title %}{% endblock title %}</title>
+  {% block styles %}
+    <link type="image/x-icon" rel="shortcut icon" href="{% static 'adminlte/favicon.ico' %}">
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'adminlte/plugins/fontawesome-free/css/all.min.css' %}">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet" href="{% static 'adminlte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css' %}">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="{% static 'adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="{% static 'adminlte/plugins/jqvmap/jqvmap.min.css' %}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{% static 'adminlte/dist/css/adminlte.min.css' %}">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="{% static 'adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css' %}">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="{% static 'adminlte/plugins/daterangepicker/daterangepicker.css' %}">
+    <!-- summernote -->
+    <link rel="stylesheet" href="{% static 'adminlte/plugins/summernote/summernote-bs4.min.css' %}">
+  {% endblock styles %}
+  <style>{% block styles_inline %}{% endblock styles_inline %}</style>
+  {% block javascript_head %}{% endblock javascript_head %}
+{% endblock head %}
+</head>
+
+<body{% block body_attributes %}{% endblock body_attributes %}>
+{% block body %}
+  {% block main %}{% endblock main %}
+  {% block javascript %}
+    <script src="{% static 'adminlte/plugins/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'adminlte/plugins/jquery-ui/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'adminlte/plugins/chart.js/Chart.min.js' %}"></script>
+    <script src="{% static 'adminlte/plugins/sparklines/sparkline.js' %}"></script>
+    <script src="{% static 'adminlte/plugins/jqvmap/jquery.vmap.min.js' %}"></script>
+    <script src="{% static 'adminlte/plugins/jqvmap/maps/jquery.vmap.usa.js' %}"></script>
+    <script src="{% static 'adminlte/plugins/jquery-knob/jquery.knob.min.js' %}"></script>
+    <script src="{% static 'adminlte/plugins/moment/moment.min.js' %}"></script>
+    <script src="{% static 'adminlte/plugins/daterangepicker/daterangepicker.js' %}"></script>
+    <script src="{% static 'adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+    <script src="{% static 'adminlte/plugins/summernote/summernote-bs4.min.js' %}"></script>
+    <script src="{% static 'adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js' %}"></script>
+    <script src="{% static 'adminlte/dist/js/adminlte.min.js' %}"></script>
+    <script src="{% static 'adminlte/dist/js/pages/dashboard.js' %}"></script>
+  {% endblock javascript %}
+  <script>{% block javascript_inline %}{% endblock javascript_inline %}</script>
+{% endblock body %}
+</body>
+</html>
+{% endblock document %}

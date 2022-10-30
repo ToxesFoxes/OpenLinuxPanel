@@ -1,0 +1,16 @@
+{
+	"git.ignoreLimitWarning": true,
+	"files.exclude": {
+		"**/bin/": true,
+		"**/include/": true,
+		"**/lib/": true,
+		"**/venv/": true,
+		"**/pyvenv.cfg": true,
+		"**/.Python": true,
+		"**/.venv": true,
+		"**/__pycache__/": true,
+		"**/*.py[cod]": true,
+		"**/*.so": true,
+		"**/.DS_Store": true
+	}
+}

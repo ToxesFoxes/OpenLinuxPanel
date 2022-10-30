@@ -1,0 +1,22 @@
+# Python virtualenv
+bin/
+include/
+lib/
+venv/
+pyvenv.cfg
+
+.Python
+.venv
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
+# macOS
+.DS_Store
+
+# database
+*.sqlite3
+db
