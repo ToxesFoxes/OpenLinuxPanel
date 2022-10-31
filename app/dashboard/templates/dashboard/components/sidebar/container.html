@@ -1,0 +1,17 @@
+{% load static %}
+<aside class="main-sidebar sidebar-dark-primary">
+  <div class="sidebar">
+    <div class="user-panel my-3 pb-3 d-flex flex-row">
+      <a href="#">
+        <div class="image">
+          <img src="{% static 'dashboard/images/logo.png' %}" alt="OLP Logo" class="img-circle">
+        </div>
+        <div class="info">
+          <span class="d-block server-ip">192.168.1.1</a>
+        </div>
+      </a>
+    </div>
+    <!-- Sidebar Menu -->
+    {% include 'dashboard/components/sidebar/menu.html'%}
+  </div>
+</aside>

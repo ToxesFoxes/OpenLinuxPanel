@@ -1,0 +1,17 @@
+{% load custom_tags %}
+<div class="row">
+  {% for key,obj in overview.items %}
+    <div class="col-xs-12 col-sm-4 col-md-4 col-xl-2-5 col-6">
+      <div class="small-box {{obj.style.color}}">
+        <div class="inner">
+          <h3>{{obj.value}}</h3>
+          <p class="mb-0 mb-md-1">{{obj.text.main_title}}</p>
+        </div>
+        <div class="icon">
+          <i class="fas {{obj.style.icons.top}}"></i>
+        </div>
+        <a href="#" class="small-box-footer d-flex gap-1 justify-content-center align-items-center">{{obj.text.footer_title}} <i class="fas {{obj.style.icons.footer}}"></i></a>
+      </div>
+    </div>
+  {% endfor %}
+</div>

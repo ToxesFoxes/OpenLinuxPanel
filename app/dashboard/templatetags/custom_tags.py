@@ -1,11 +1,12 @@
 from django import template
 import datetime
-
+from inspect import getmembers
+from pprint import pprint
 register = template.Library()
 
 @register.simple_tag
 def vardump(context):
-	return context
+	return pprint(getmembers(context))
 
 @register.simple_tag
 def current_time(format_string):
