@@ -1,22 +1,12 @@
 <nav class="mt-2">
   <ul class="nav nav-pills nav-sidebar flex-column nav-collapse-hide-child nav-child-indent" data-widget="treeview" role="menu" data-accordion="false">
-    <li class="nav-item">
-      <a href="#" class="nav-link d-flex align-items-center active">
-        <i class="nav-icon fas fa-duotone fa-server"></i>
-        <p>Home</p>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a href="#" class="nav-link d-flex align-items-center">
-        <i class="nav-icon fas fa-duotone fa-globe"></i>
-        <p>Websites</p>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a href="#" class="nav-link d-flex align-items-center">
-        <i class="nav-icon fas fa-duotone fa-database"></i>
-        <p>Databases</p>
-      </a>
-    </li>
+    {% for key,obj in overview.items %}
+      <li class="nav-item">
+        <a href="{% url obj.url %}" class="nav-link d-flex align-items-center {% if page.url_name == obj.url %}active{% endif %}">
+          <i class="nav-icon fas {{obj.style.icons.top}}"></i>
+          <p>{{obj.text.main_title}}{% if obj.value and not page.url_name == 'index' %}<span class="badge badge-info right">{{obj.value}}{% endif %}</span></p>
+        </a>
+      </li>
+    {% endfor %}
   </ul>
 </nav>

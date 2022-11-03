@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-3uul2ih22gx_&sm3=l8)t!s@*$v44^e%z=^9u1w8rwn8nj-82(
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '127.0.0.1'
+    '127.0.0.1',
+    '192.168.14.139'
 ]
 
 
@@ -87,7 +88,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db',
-    }
+    },
+    # 'panel': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'OpenLinuxPanel' / 'panel.db',
+    # }
 }
 
 
@@ -126,7 +131,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-
+INTERNAL_IPS= ['127.0.0.1']
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 

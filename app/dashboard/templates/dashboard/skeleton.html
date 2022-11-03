@@ -1,0 +1,36 @@
+{% extends "adminlte/skeleton.html" %}
+{% load static %}
+{% load custom_tags %}
+{% block body_attributes %}
+class="layout-fixed sidebar-mini-md"
+{% endblock body_attributes %}
+{% block page_title %}
+{{page.name}}
+{% endblock page_title %}
+{% block main %}
+<div class="wrapper">
+  {% if not hide_preloader %}
+  <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__wobble" src="{% static 'dashboard/images/logo.png' %}" alt="AdminLTELogo" height="60" width="60">
+  </div>
+  {% endif %}
+  {% include "dashboard/components/navbar.html" %}
+  {% include "dashboard/components/sidebar/container.html" %}
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Main content -->
+    <section class="content py-3">
+      <div class="container-fluid">
+        <div class="alert alert-warning alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fas fa-xmark text-sm"></i></button>
+          <h5><i class="icon fas fa-exclamation-triangle"></i> Alert!</h5>
+          This app is demonstration only. No data will be saved.
+        </div>
+        {% block container_fluid %}
+        {% endblock container_fluid %}
+      </div>
+    </section>
+  </div>
+  {% include "dashboard/components/footer.html" %}
+</div>
+{% endblock main %}

@@ -1,3 +1,4 @@
+import json
 from django import template
 import datetime
 from inspect import getmembers
@@ -6,7 +7,7 @@ register = template.Library()
 
 @register.simple_tag
 def vardump(context):
-	return pprint(getmembers(context))
+	return json.dumps(context, indent=4)
 
 @register.simple_tag
 def current_time(format_string):

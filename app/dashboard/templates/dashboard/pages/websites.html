@@ -2,11 +2,13 @@
 {% load static %}
 {% load custom_tags %}
 {% block page_title %}
-Home
+Websites
 {% endblock page_title %}
 {% block container_fluid %}
-  {% include "dashboard/components/overview.html" %}
-  {% include "dashboard/components/system-stats.html" %}
+  <div class="alert alert-warning alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fas fa-xmark text-sm"></i></button>
+    <h5><i class="icon fas fa-exclamation-triangle"></i> Test!</h5>
+  </div>
 {% endblock container_fluid %}
 
 {% block javascript %}
